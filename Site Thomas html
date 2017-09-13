@@ -1,33 +1,40 @@
 <html>
 
+	<head>
+
+		
+
+	</head>
 		<meta charset="utf-8" />
 
 		<title>Thomas</title>		
 
-		<body background="Images-4.jpg">
+		<body background="Images-8.jpg">
 
-		<font color="black"><h1><center><i> Site de Thomas Héron </center></h1></font>
+		<font color="white"><h1><center><i> Site de Thomas Héron </center></h1></font>
 
-		<font color="black"><h2>Etudiant Bts SIO 1ere Annee au lycée de l'hautil</h2></font>
+		<font color="white"><h2>Etudiant Bts SIO 1ere Annee au lycée de l'hautil</h2></font>
 
-		<font color="black"><h2>Au sein de la formation j'ai réalisé : </h2>
+		<font color="white"><h2>Au sein de la formation j'ai réalisé : </h2>
  
-				<p><font color="blue"><div style="text-indent: 40px;" >un programme Hello World</font></p>
+				<p><font color="red"><div style="text-indent: 40px;" >un programme Hello World</font></p>
 
-		<font color="black"><div style="text-indent: 0px;" ><h2>Au sein de mes précédentes formations j'ai réalisé : </h2></font>
-				<p><font color="blue"><div style="text-indent: 40px;" >une serrure automatisé dans le cadre du projet du 					baccalauréat</p>
+		<font color="white"><div style="text-indent: 0px;" ><h2>Au sein de mes précédentes formations j'ai réalisé : </h2></font>
+				<p><font color="red"><div style="text-indent: 40px;" >une serrure automatisé dans le cadre du projet du 					baccalauréat</p>
 				<p>un programme Hello World</p>
 				<p>des programmes qui éxécutent des fonctions mathématiques, Conçu un mini jeu</font></p>
 
-		<font color="black"><div style="text-indent: 0px;" ><h2>Les sites qui me semblent êtres utiles pour ma formation sont:</h2> </font>
+		<font color="white"><div style="text-indent: 0px;" ><h2>Les sites qui me semblent êtres utiles pour ma formation sont:</h2> </font>
 		
-		<p><font color="blue"><div style="text-indent: 40px;" >Openclassrooms</p>
-		<p>Commentçamarche</p>
-		<p>Wikipédia</p>
-		<p>Cherryclass</p>
-		<p>Gitlab</font></p>
 
-		<font color="black"><div style="text-indent: 0px;" ><H2>Suite à l'obtension de mon Bts je souhaite poursuivre mes études</h2>
+		<div style="text-indent: 40px;" ><font color="red"><a href="https://openclassrooms.com/">openclassrooms</a>
+		<div style="text-indent: 40px;" ><font color="red"><a href="https://commentcamarche.net/">commentcamarche</a>
+		<div style="text-indent: 40px;" ><font color="red"><a href="https://fr.wikipedia.org/wiki/Wikip%C3%
+		A9dia:Accueil_principal">wikipedia</a>
+		<div style="text-indent: 40px;" ><font color="red"><a href="https://cherryclass.net//">cherryclass</a>
+		<div style="text-indent: 40px;" ><font color="red"><a href="https://gitlab.com/">Gitlab</a>
+
+		<font color="white"><div style="text-indent: 0px;" ><H2>Suite à l'obtension de mon Bts je souhaite poursuivre mes études</h2>
 		</font>
 
 </html>
