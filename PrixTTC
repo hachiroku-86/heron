@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+
+public class Mission1 {
+
+	public static void main (String[] args){
+		
+	
+		double PrixTTC;
+		
+		Scanner pht = new Scanner(System.in);
+		System.out.println("Saisissez le prix HT");
+		double PrixHT= pht.nextDouble();
+		
+		Scanner tva = new Scanner(System.in);
+		System.out.println("Saisissez le taux de la tva");
+		double TauxTVA= tva.nextDouble();
+		
+		Scanner quant = new Scanner(System.in);
+		System.out.println("Saisissez la quantité");
+		double Quantité= quant.nextDouble();
+		
+		PrixTTC= PrixHT*TauxTVA;
+		System.out.println("Le prix TTC est :" +(PrixTTC*Quantité));
+		
+		
+	}
+	
+	
+}
