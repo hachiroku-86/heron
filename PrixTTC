@@ -1,4 +1,4 @@
-import java.util.Scanner;
+mport java.util.Scanner;
 
 
 public class Mission1 {
@@ -8,6 +8,10 @@ public class Mission1 {
 	
 		double PrixTTC;
 		
+		Scanner prod = new Scanner(System.in);
+		System.out.println("Saisissez le produit");
+		String Produit= prod.nextLine();
+		
 		Scanner pht = new Scanner(System.in);
 		System.out.println("Saisissez le prix HT");
 		double PrixHT= pht.nextDouble();
@@ -15,6 +19,8 @@ public class Mission1 {
 		Scanner tva = new Scanner(System.in);
 		System.out.println("Saisissez le taux de la tva");
 		double TauxTVA= tva.nextDouble();
+		
+		
 		
 		Scanner quant = new Scanner(System.in);
 		System.out.println("Saisissez la quantité");
