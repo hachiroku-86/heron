@@ -10,6 +10,8 @@
 
 		<font color="white"><h1><center><i> Site de Thomas Héron </center></h1></font>
 
+		<link rel="stylesheet" type="text/css" href="Site.css">
+		
 		<style type="text/css">
 			a{color:red}
 		</style>
@@ -31,12 +33,12 @@
 		</h2> </font>
 		
 
-		<div style="text-indent: 40px;" ><font color="green"><a href="https://openclassrooms.com/">Openclassrooms</a> <br><br>
-		<div style="text-indent: 40px;" ><font color="red"><a href="https://commentcamarche.net/">Commentcamarche</a> <br><br>
-		<div style="text-indent: 40px;" ><font color="red"><a href="https://fr.wikipedia.org/wiki/Wikip%C3%
+		<font color="green"><img src="openclassrooms.png" width="50"px Height="50"/><a href="https://openclassrooms.com/">Openclassrooms</a> <br><br>
+		<font color="red"><img src="commentcamarche.png" width="50"px Height="50"/><a href="https://commentcamarche.net/">Commentcamarche</a> <br><br>
+		<font color="red"><img src="wikipedia.png" width="45"px Height="55"/><a href="https://fr.wikipedia.org/wiki/Wikip%C3%
 		A9dia:Accueil_principal">Wikipedia</a> <br><br>
-		<div style="text-indent: 40px;" ><font color="red"><a href="https://cherryclass.net//">Cherryclass</a> <br><br>
-		<div style="text-indent: 40px;" ><font color="red"><a href="https://gitlab.com/">Gitlab</a> <br><br>
+		<font color="red"><img src="cherryclass.png" width="150"px Height="50"/><a href="https://cherryclass.net//">Cherryclass</a> <br><br>
+		<font color="red"><img src="logo Gitlab.png" width="50"px Height="50"/><a href="https://gitlab.com/">Gitlab</a> <br><br>
  
 		<font color="white"><div style="text-indent: 0px;" ><H2>Suite à l'obtension de mon Bts je souhaite poursuivre mes études
 		</h2>
