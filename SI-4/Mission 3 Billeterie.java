@@ -21,19 +21,19 @@ public class Mission3Billeterie {
         int choix= Choix.nextInt();
 
 
-        if (age < 3){
+        if (age <= 3){
                 System.out.println("nourisson"+ " " + age);
                                     categorie="nourisson";
         }
-        else if (age > 3 && age < 12){
+        else if (age > 3 && age <= 12){
                 System.out.println("enfant"+ " " + age);
                                     categorie="enfant";
         }
-        else if (age > 12 && age < 18){
+        else if (age > 12 && age <= 18){
                 System.out.println("adolescent"+ " " + age);
                                     categorie="adolescent";
         }
-        else if (age > 18 && age < 55){
+        else if (age > 18 && age <= 55){
                 System.out.println("adult"+ " " + age);
                                     categorie="adult";
         }
