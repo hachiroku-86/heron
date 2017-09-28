@@ -1,0 +1,52 @@
+Question 1:
+
+    select * from M3_client
+
+Question 2:
+
+    select * from M3_logement
+
+Question 3:
+
+    select * from M3_client where idCli > 5
+    
+Question 4:
+
+    select * from M3_client where adresse like"%rue du chene"
+    
+Question 5:
+
+    select * from M3_client where dateNaiss = null
+    
+Question 6:
+
+    select * from M3_client where dateNaiss like"%2011%"
+    
+Question 7:
+
+    select dateNaiss from M3_client
+    order by 1
+    
+Question 8:
+
+    select * from M3_logement where valeurEstimative > 160000
+    
+Question 9:
+
+    select * from M3_logement where adresse like"%rue du chene%"
+    
+Question 10:
+
+    select idCli from M3_contrat
+    
+Question 11:
+
+    select idlogement from M3_contrat
+    
+Question 13:
+
+    select * from M3_contrat where montant > 200
+    
+Quetion 14:
+
+    
