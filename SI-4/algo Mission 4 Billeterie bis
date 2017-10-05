@@ -1,0 +1,65 @@
+variables:
+    
+    String categorie= null;
+    double prix = 0;
+    float spectacle1;
+    float spectacle2;
+    float spectacle3;
+    float spectacle4;
+    int continuer
+    double prixtotal
+
+Début
+    Saisir achat
+                Tant que achat=1
+                    Faire
+    saisir age
+    
+    saisir Spectacle
+    
+    si age <= 3
+        afficher "nourisson"
+    si sinon age > 3 et age <= 12 
+        afficher "enfant"
+    si sinon age > 12 et age <= 18 
+        afficher "adolescent"
+    si sinon age > 18 et age <= 55 
+        afficher "adult"
+    si sinon age > 55 
+        afficher "senior"
+finsi        
+        
+    si spectacle = 1
+        prix = 10
+    si sinon spectacle = 2
+        prix = 20
+    si sinon spectacle = 3
+        prix = 30
+    si sinon spectacle = 4
+        prix = 40
+    sinon afficher "ce spectacle n'existe"
+finsi
+
+    si categorie = nourisson
+        prix= 5
+        afficher "prix"
+    sinon categorie = enfant
+        prix=prix*0,3
+        afficher "prix"
+    sinon categorie = adolescent
+        prix=prix
+        afficher "prix"
+    sinon categorie = adult
+        prix=prix
+        afficher "prix"
+    sinon categorie = senior
+        prix=prix*0,5
+        afficher "prix"
+    finsi
+    
+    Saisir achat
+        prixtotal = prixtotal + prix
+    FinTQ
+        Afficher "Le prix total est de ", prixTotal, "euros."
+
+fin
