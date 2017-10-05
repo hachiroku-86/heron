@@ -10,9 +10,17 @@ public class Mission4Billeteriebis {
         float spectacle2;
         float spectacle3;
         float spectacle4;
+        int continuer=0;
+        double prixtotal=0;
+
+        Scanner Continuer = new Scanner(System.in);
+        System.out.println("Souhaitez vous acheter ou quitter ?");
+        continuer= Continuer.nextInt();
+
+        while (continuer == 1) {
 
 
-        Scanner Age = new Scanner(System.in);
+            Scanner Age = new Scanner(System.in);
         System.out.println("Saisissez votre age");
         int age= Age.nextInt();
 
@@ -23,11 +31,16 @@ public class Mission4Billeteriebis {
         }
 
         Scanner Choix = new Scanner(System.in);
-        System.out.println("Choissez votre spectacle");
+        System.out.println("Choisissez votre spectacle");
         int choix= Choix.nextInt();
 
 
+        while (choix < 0 || choix > 4 ) {
+            System.out.println("Vous êtes con");
+            System.out.println("Choisissez votre spectacle");
+            choix = Choix.nextInt();
 
+        }
 
 
         if (age <= 3){
@@ -69,10 +82,6 @@ public class Mission4Billeteriebis {
         }
 
 
-        else {
-            System.out.println("Ce spectacle n'existe pas !");
-        }
-
 
         if(categorie.equals("nourisson")){
             prix= 5;
@@ -98,6 +107,19 @@ public class Mission4Billeteriebis {
             prix= prix*0.5;
             System.out.println(prix + "€");
         }
+
+
+        prixtotal= prixtotal + prix;
+
+        Scanner Recommencer = new Scanner(System.in);
+        System.out.println("Souhaitez vous continuer vos achats ? 1 pour continuer 2 pour quitter.");
+        continuer= Continuer.nextInt();
+
+
+
+        }
+
+        System.out.println(prixtotal);
 
     }
 
