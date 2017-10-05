@@ -1,0 +1,77 @@
+CREATE TABLE IF NOT EXISTS C4_Article (
+
+refA int(11),
+
+designation varchar(30),
+
+prix double,
+
+codeTVA varchar(10),
+
+categorie varchar(20),
+
+qtestk int(10),
+
+numF int(10),
+
+PRIMARY KEY (refA)
+
+);
+CREATE TABLE IF NOT EXISTS C4_Commande (
+
+nocde int(11),
+
+nocli int(10),
+
+datecde date,
+
+etat varchar(20),
+
+PRIMARY KEY (nocde)
+
+);
+
+CREATE TABLE IF NOT EXISTS C4_Client (
+
+nocli int(11),
+
+nomcli varchar(30),
+
+adrcli varchar(60),
+
+code_postal varchar(10),
+
+ville varchar(20),
+
+PRIMARY KEY (nocli)
+
+);
+
+CREATE TABLE IF NOT EXISTS C4_Fournisseur (
+
+num_F int(11),
+
+nom varchar(30),
+
+adresse varchar(60),
+
+numtel varchar(10),
+
+dateCreation varchar(20),
+
+PRIMARY KEY (num_F)
+
+);
+CREATE TABLE IF NOT EXISTS C4_Ligcde (
+
+nocde int(11),
+
+nolig int(10),
+
+refart varchar(20),
+
+qtecde int(10),
+
+PRIMARY KEY (nocde)
+
+)
