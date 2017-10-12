@@ -1,0 +1,18 @@
+Algo jeux mathematiques:
+
+variables:
+
+	nmb entier
+	somme entier
+	chl chaine de caractere 	
+
+
+Debut:
+	pour nmb de 1 à 10 pas 1
+	faire
+		saisir "Saisissez un nombre"
+		chl=chl + nmb
+		somme= somme + nmb
+	fin pour
+	afficher chl + somme
+fin
