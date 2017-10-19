@@ -1,0 +1,27 @@
+2 – CREATE TABLE […] ([…])
+ALTER TABLE […] add constraint […] primary key […]
+ALTER TABLE […] add constraint […] foreign key […] references [...]([...])
+
+3 – INSERT INTO […] ([...])
+values ([…])
+
+4 – ALTER TABLE M4_CLIENT ADD portable varchar(10)
+
+5 – ALTER TABLE M4_COMMANDE ADD dateliv date
+
+6 – SELECT * FROM M4_CLIENT
+
+7 – SELECT nomcli, prenomcli, portable FROM M4_CLIENT
+
+8 – SELECT M4_CLIENT.numcli, M4_CLIENT.nomcli, M4_ARTICLE.nom
+FROM M4_CLIENT, M4_COMMANDE, M4_Ligcde, M4_ARTICLE
+WHERE M4_CLIENT.numcli = M4_COMMANDE.numcli
+AND M4_COMMANDE.idcde = M4_Ligcde.idcde
+AND M4_Ligcde.ref = M4_ARTICLE.ref
+AND M4_ARTICLE.nom LIKE  "poele%"
+
+9 – UPDATE M4_CLIENT SET adressecli= "12 rue de la forêt 34790 Marilly" where numcli= "35165"
+
+10 – ALTER TABLE M4_CLIENT ADD (ville varchar(20));
+UPDATE M4_CLIENT SET adressecli= ("4 rue du plouc") where numcli="37777";
+UPDATE M4_CLIENT SET ville= ("95999 Magny") where numcli="37777";
