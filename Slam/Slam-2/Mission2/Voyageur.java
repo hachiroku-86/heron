@@ -73,8 +73,12 @@ class Voyageur{
 
     void afficher () {
         System.out.println ("Nom :("+nom+", "+age+", "+categorie+")");
-        this.adresse.afficher();
-        this.bagage.afficher();
+        if(adresse!=null) {
+            this.adresse.afficher();
+        }
+        if(bagage!=null) {
+            this.bagage.afficher();
+        }
     }
 
     void afficher2 () {
