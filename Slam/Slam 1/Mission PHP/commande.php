@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +9,10 @@
     <script type="text/javascript"> function showValue3(newValue){ document.getElementById("courgette").innerHTML=newValue ;} </script>
 </head>
 <body>
+
+<?php 
+    require_once 'header.php';
+?>
 
     <form method="post" id="frmConnection" action="infocmd.php">
         <p>
@@ -26,3 +31,4 @@
 <br>
 <a href="bonjour.php">Retour</a></br></br>
 </html>
+
