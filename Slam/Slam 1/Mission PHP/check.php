@@ -5,8 +5,11 @@
 </head>
 <body>
 
-<?php session_start();
+<?php 
+
+require_once 'header.php';
 $login = [["Lacroix", "Clement"], ["Cataldi", "Matis"]];
+$logins =["Lacroix","Cataldi"];
 $step=false;
 
 for($i=0; $i < count($login); $i++){
@@ -16,10 +19,19 @@ for($i=0; $i < count($login); $i++){
 }
 
 if($step == true){
-	echo "Personne connue "."</br></br><a href='commande.html'>Passer commande</a>"."</br></br><a href='formulaire.html'>Retour au formulaire</a>";
+	echo "Personne connue "."</br></br><a href='commande.php'>Passer commande</a>"."</br></br><a href='formulaire.html'>Retour au formulaire</a>";
 } else {
-	echo "Personne inconnue "."</br></br><a href='formulaire.html'>Retour au formulaire</a>";
-}
+	echo "Personne inconnue "."</br></br><a href='formulaire.html'>Retour au formulaire</a></br></br>";
+
+	echo("<select name=’maListe’ size=’1’>") ;
+ 
+	foreach($logins as $login){ 
+	echo("<option>".$login." </option>") ;
+ 
+	} 
+	echo("</select >") ;
+
+	}
 ?>
 
 </body>
