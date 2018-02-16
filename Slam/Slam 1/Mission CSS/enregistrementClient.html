@@ -1,0 +1,58 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enregistrement</title>
+</head>
+<a href="index.html">Mission HTML5</a>
+<body>
+    <p>Remplir le formulaire</p>
+
+    <fieldset>
+    <form method="post" action="traitement.php">
+        <p>
+            <label>Login</label> : <input type="text" name="login" placeholder="Ex : Stardust"/>
+        </p>
+    </form>
+    <form method="post" action="traitement.php">
+        <p>
+            <label>Mot de passe</label> : <input type="text" name="mot de passe" placeholder="Ex : 12345678"/>
+        </p>
+    </form>
+    </fieldset>
+    <fieldset>
+        <legend>Informatios personelles</legend>
+        <form method="post" action="traitement.php">
+            <p>
+                <label>Nom</label> : <input type="text" name="nom" placeholder="Ex : Lacroix" required="required"/>
+            </p>
+        </form>
+        <form method="post" action="traitement.php">
+            <p>
+                <label>Prénom</label> : <input type="text" name="prenom" placeholder="Ex : Clément" required="required"/>
+            </p>
+        </form>
+        <form method="post" action="traitement.php">
+            <p>
+                <label>Date de naissance</label> : <input type="date" name="date" required="required"/>
+            </p>
+        </form>
+    <form method="post" action="traitement.php">
+        <p>
+            <label>Email</label> : <input type="email" type="text" name="email" placeholder="Ex : raphaël.sisr@gmail.com" autofocus/>
+        </p>
+    </form>
+    <form method="post" action="traitement.php">
+        <p>
+            <label>URL</label> : <input type="url" type="text" name="url" placeholder="Ex : https://cherryclass.net/"/>
+        </p>
+    </form>
+        Voulez vous recevoir les newletters :<br />
+        <input type="radio" name="choix" value="Oui" id="Oui" /> <label for="Oui">Oui</label><br />
+        <input type="radio" name="choix" value="Non" id="Non" /> <label for="Non">Non</label><br />
+    </fieldset>
+
+    <p>Envoyer le formulaire</p>
+
+</body>
+</html>
