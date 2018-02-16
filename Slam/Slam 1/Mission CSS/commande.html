@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commande</title>
+    <script type="text/javascript"> function showValue1(newValue){ document.getElementById("baignoire").innerHTML=newValue ;} </script>
+    <script type="text/javascript"> function showValue2(newValue){ document.getElementById("lolo").innerHTML=newValue ;} </script>
+    <script type="text/javascript"> function showValue3(newValue){ document.getElementById("courgette").innerHTML=newValue ;} </script>
+</head>
+<body>
+    <form method="post" action="traitement.php">
+        <p>
+            <label>Baignoire</label> : <input type="range" min="0" max="5" name="article" onchange="showValue1(value)"><span id="baignoire"></span>
+            <label>Couleur</label> : <input type="color" name="couleur"/> </p>
+    </form>
+    <form method="post" action="traitement.php">
+        <p>
+            <label>ouistit du Brésil</label> : <input type="range" min="0" max="100" name="article" onchange="showValue2(value)"><span id="lolo"></span>
+            <label>Couleur</label> : <input type="color" name="couleur"/> </p>
+    </form>
+    <form method="post" action="traitement.php">
+        <p>
+            <label>Courgette sèché</label> : <input type="range" min="0" max="30" name="nom" onchange="showValue3(value)"><span id="courgette"></span>
+            <label>Couleur</label> : <input type="color" name="couleur"/> </p>
+    </form>
+    <label>Date de naissance</label> : <input type="date" name="date" required="required"/>
+</body>
+<br>
+<br>
+<a href="index.html">Retour</a>
+</html>
