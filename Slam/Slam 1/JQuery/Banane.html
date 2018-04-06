@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sélecteurs CSS</title>
+</head>
+ 
+<body>
+<form>
+<a>Nom d'utilisateur</a>
+<input type="text" name="nom" class="user"><br />
+Mot de passe
+<input type="password" name="pass"><br />
+Sexe
+Homme <input type="radio" name="sexe" value="H">
+Femme <input type="radio" name="sexe" value="F"><br />
+Commentaires
+<textarea rows="3" name="commentaires">Tapez vos commentaires
+ici</textarea><br />
+<img src="chat.jpg" id="chat"><br />
+<input type="submit" value="Envoyer">
+<input type="reset" value="Annuler">
+</form>
+<ul class="rouge">
+<li class="impair">premier élément de la liste à puces</li>
+<li class="pair">deuxième élément de la liste à puces</li>
+<li class="impair">troisième élément de la liste à puces</li>
+</ul>
+<div>
+<ul class="bleu">
+<li class="impair">premier élément de la liste à puces</li>
+<li class="pair">deuxième élément de la liste à puces</li>
+<li class="impair">troisième élément de la liste à
+puces</li>
+<input type="button" name="boutton" value="Il est plus vide">
+</ul>
+</div>
+<center><img src="Original_PacMan.png" id="PacMan" style="position: absolute;"></center>
+    <span id="wiwi">salut les vaches</span>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script>
+$(function() {
+// Le code jQuery sera tapé ici
+
+$('textarea').css('background-color', 'green');
+$('li').css('color', 'blue');
+$( "#wiwi" ).remove();
+$('input[name=nom]').val('Heron');
+$('input[name=pass]').val('Thomas');
+$('a').text('Votre nom');
+$('#chat').hide('1000, 1000');
+$('#chat').delay('1000');
+$('#chat').show('1000,1000');
+$('#chat').click(function() {
+  $('#chat').toggle('1000')
+ });
+$('body').keypress(function(e) {
+  var key = e.which;
+    if (key == 105) {
+        $("#chat").toggle('1000');
+    }
+});
+$('input[name=boutton]').click(function(){
+	alert('SLT LES BG');
+});
+var compteur = 0;
+$('body').keypress(function(e) {
+  var key = e.which;
+    if (key == 122) {
+    	$('#PacMan').animate({top: "-=100"},1000);
+        compteur = compteur + 1 ;
+    }else if (key == 115) {
+    	$('#PacMan').animate({top: "+=100"},1000);
+        compteur = compteur + 1 ;
+    }else if (key == 100) {
+    	$('#PacMan').animate({left: "+=100"},1000);
+        compteur = compteur + 1 ;
+    }else if (key == 113) {
+    	$('#PacMan').animate({left: "-=100"},1000);
+        compteur = compteur + 1 ;
+    }
+if (compteur == 15){
+    $('#PacMan').hide('1000,1000');
+} 	 	 	
+});
+});
+</script>
+</body>
+</html>
