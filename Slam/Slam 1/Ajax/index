@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+</head>
+ 
+<body>
+ 
+ <button class="btn btn-primary" id="btn">Valider</button>
+ <div id="result"></div>
+
+
+
+		<p>Entrer votre adresse email : </p>
+		<input pattern="^[a-z]+\.[a-z]+@hautil.fr$" type="email" id="emailhtml">
+		<input type = "button" value = "Valider Mail" id="btn2"></br></br>
+		<div id="result2"></div>
+ 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="index.js?v=1"></script>
+<script src="autocomplete.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</body>
+</html>
