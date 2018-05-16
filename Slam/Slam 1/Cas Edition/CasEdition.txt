@@ -1,0 +1,16 @@
+1 :
+
+	AUTEURS (idA, nom, prenom, date de naissance, adresse)
+	clé primaire : idA	
+
+	LIVRES (idLV, titre, année, nombre de pages, idA)
+	clé primaire : idLV	clé étrangère : idA en ref a AUTEURS.idA
+
+	COMMANDE (idC, idLB, date, idLV , titre , quantite)
+	clé primaire : idC	 clé étrangère : idLV en ref a LIVRES.idLV
+
+	LGCDE (idLG, idC, idLV)
+	clé primaire : idLG	clé étrangère : idC en ref a COMMANDE.idC, idLV en ref a LIVRES.idLV
+
+	LIBRAIRIES (idLB, adresse, nom, CP) 
+	clé primaire : idLB
