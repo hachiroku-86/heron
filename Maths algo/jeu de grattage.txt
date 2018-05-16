@@ -1,0 +1,21 @@
+Question 1: 
+
+Les variables utilisées dans l'algorhitme A1 sont: 
+	-Liste
+	-K
+	-i
+	-j
+	-temp
+
+La variable temp sert à stocker la valeur de i.
+
+
+Question 2:
+
+Cet algorhitme sert a mélanger des nombres.
+
+
+Question 3:
+
+DEBUT
+	
