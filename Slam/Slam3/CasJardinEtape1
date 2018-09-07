@@ -1,0 +1,22 @@
+Fleurs(ref, nom, nomLatin, prix, couleur)
+clé primaire: ref
+clé étrangère: couleur ref to libelle dans table Couleurs
+
+
+Couleurs(code, libelle)
+clé primaire: code
+
+
+Client(id, nom, prenom, adresse)
+clé primaire: id
+
+
+Commande(id, prixTotal, idCli)
+clé primaire: id
+clé étrangère: idCli ref to id dans table client
+
+
+Ligcde(idCde, qte, refFleur)
+clé primaire: idCde, refFleur
+clé étrangère: idCde ref to id dans la table Commande
+	       refFleur ref to ref dans la table Fleur
