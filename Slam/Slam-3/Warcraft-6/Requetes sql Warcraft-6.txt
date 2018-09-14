@@ -1,0 +1,52 @@
+Etape 1:
+	SELECT members_character_name from members ORDER by members_character_name
+
+Etape 2:
+	SELECT members_character_level
+	FROM members, races , faction 
+	WHERE faction.id = races.races_side AND races.races_id = members_character_race AND faction.id = 2;
+
+Etape 3:
+	SELECT members_character_name, COUNT(mounts_members.name) FROM members, mounts_members, mounts
+	WHERE mounts_members.name = members.members_character_id
+	AND mounts_members.mounts_collected_creature_id = mounts.mounts_creature_id
+	GROUP BY members_character_name
+	HAVING COUNT(mounts_members.name) > 5;
+
+Etape 4:
+	SELECT members_character_name, COUNT(mounts_members.name) FROM members, mounts_members, mounts
+WHERE mounts_members.name = members.members_character_id
+AND mounts_members.mounts_collected_creature_id = mounts.mounts_creature_id
+GROUP BY members_character_name
+HAVING count(mounts_members.name) >= ALL(SELECT count(mounts_members.name) FROM members, mounts_members, mounts WHERE mounts_members.name = members.members_character_id
+AND mounts_members.mounts_collected_creature_id = mounts.mounts_creature_id
+GROUP BY members_character_name)
+
+Etape 5:
+	SELECT members_character_name, COUNT(mounts_members.name) FROM members, mounts_members, mounts
+	WHERE mounts_members.name = members.members_character_id
+	AND mounts_members.mounts_collected_creature_id = mounts.mounts_creature_id
+	GROUP BY members_character_name
+	HAVING COUNT(mounts_members.name) = ALL(SELECT COUNT(*) from mounts)
+
+Etape 6:
+	1)SELECT members_character_name, COUNT(pets_members.id_pet) FROM members, pets_members, pets
+	WHERE pets_members.id_members = members.members_character_id
+	AND pets_members.id_pet = pets.pets_id
+	GROUP BY members_character_name
+	HAVING COUNT(pets_members.id_pet) >= ALL(SELECT COUNT(pets_members.id_pet) FROM members, pets_members, pets WHERE pets_members.id_members = members.members_character_id
+	AND pets_members.id_pet = pets.pets_id
+	GROUP BY members_character_name)
+
+	2)SELECT members_character_name, COUNT(pets_members.id_pet) FROM members, pets_members, pets
+	WHERE pets_members.id_members = members.members_character_id
+	AND pets_members.id_pet = pets.pets_id
+	GROUP BY members_character_name
+	ORDER BY COUNT(pets_members.id_pet)
+
+	3)SELECT members_character_name, pet_types_name, COUNT(pets_members.id_pet) FROM members, pets_members, pets, pet_types
+	WHERE pets_members.id_members = members.members_character_id
+	AND pets_members.id_pet = pets.pets_id
+	AND pets.pets_type_id = pet_types.pet_types_id
+	GROUP BY members_character_name, pet_types_name
+	ORDER BY members_character_name
