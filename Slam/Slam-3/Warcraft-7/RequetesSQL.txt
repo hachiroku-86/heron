@@ -1,0 +1,71 @@
+1) DELIMITER //
+CREATE TRIGGER lvl0_name BEFORE UPDATE on members
+FOR EACH ROW
+BEGIN
+IF NEW.members_character_name <> OLD.members_character_name THEN
+SET NEW.members_character_level=1;
+END IF;
+END;
+//
+
+Pour tester: UPDATE members SET members_character_name ='test' WHERE members_character_id=1;
+
+2) DELIMITER //
+CREATE TRIGGER add_lev2 AFTER INSERT ON mounts_members
+FOR EACH ROW
+BEGIN
+UPDATE members SET members.members_character_level = members.members_character_level + 1 WHERE NEW.name = members.members_character_id;
+END;
+//
+
+Pour tester: INSERT INTO mounts_members VALUES (-81772, 30)
+
+3)  DELIMITER //
+CREATE TRIGGER dk_lev AFTER INSERT ON members
+FOR EACH ROW
+IF  NEW.members_character_class = 6 THEN
+UPDATE members SET members.members_character_level = 70 WHERE members.members_character_class = 6;
+END IF;
+END;
+//
+
+Pour tester : Pour tester: INSERT INTO members(members_character_id, members_character_race, members_character_spec_description, members_character_name, members_character_achievement_points, members_character_spec_role, members_character_realm, members_character_guild_realm, members_rank, members_character_battlegroup, members_character_spec_order, members_character_spec_name, members_character_gender, members_character_class, members_character_spec_icon, members_character_spec_background_image, members_character_level, members_character_guild, members_character_thumbnail)
+VALUES (234567890, 2, 'test', 'test', 456, 'DPS', 'Hyjal', 'Hyjal', 3, 'Misery', 1, 'Feu', 0, 6, 'inv_sword_30', 'bg_mage_fire', 1,  'Kitten Cannon', 'hyjal/11/1144722795-avatar.jpg');
+
+4) DELIMITER //
+CREATE TRIGGER stop_del BEFORE DELETE ON members
+FOR EACH ROW
+BEGIN
+IF OLD.members_character_level >= 100 THEN
+DELETE FROM oui;
+END IF;
+END;
+//;
+
+Pour tester : DELETE FROM members WHERE members_character_id = 3
+
+5) DELIMITER //
+DROP TRIGGER IF EXISTS no_drood_ally;
+CREATE TRIGGER no_drood_ally BEFORE INSERT ON members
+FOR EACH ROW
+BEGIN
+IF NEW.members_character_class = 11 AND (NEW.members_character_race = 1 or NEW.members_character_race = 3 or NEW.members_character_race = 4 or NEW.members_character_race = 7 or NEW.members_character_race = 11 or NEW.members_character_race = 22 or NEW.members_character_race = 25 or NEW.members_character_race = 29 or NEW.members_character_race = 30) THEN
+DELETE FROM oui;
+END IF;
+END;
+//
+
+Pour tester : INSERT INTO members VALUES (5556, 22, "Il est mort et c'est un chevalier", "DeadKnightu", 0, NULL, "Hyjal", "Hyjal", 9, "Misery", NULL, NULL, 1, 11, NULL, NULL, 1, "Kitten Cannon", "hyjal/11/1144722795-avatar.jpg");
+
+6) DELIMITER //
+DROP TRIGGER IF EXISTS no_pal_horde;
+CREATE TRIGGER no_pal_horde BEFORE INSERT ON members
+FOR EACH ROW
+BEGIN
+IF NEW.members_character_class = 2 AND (NEW.members_character_race = 2 or NEW.members_character_race = 5 or NEW.members_character_race = 6 or NEW.members_character_race = 8 or NEW.members_character_race = 9 or NEW.members_character_race = 10 or NEW.members_character_race = 26 or NEW.members_character_race = 27 or NEW.members_character_race = 28) THEN
+DELETE FROM oui;
+END IF;
+END;
+//
+
+Pour tester : INSERT INTO members VALUES (5556, 2, "Il est mort et c'est un chevalier", "DeadKnightu", 0, NULL, "Hyjal", "Hyjal", 9, "Misery", NULL, NULL, 1, 2, NULL, NULL, 1, "Kitten Cannon", "hyjal/11/1144722795-avatar.jpg");

@@ -1,0 +1,6 @@
+applications:
+- name: got2got
+  memory: 128M
+  buildpack: php_buildpack
+  routes:
+  - route: got2got.mybluemix.net
