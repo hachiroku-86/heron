@@ -2,7 +2,6 @@ package sample;
 
 import javafx.application.Application;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
@@ -32,12 +31,12 @@ public class Main extends Application {
         Scene scene = new Scene(grid, 600, 450);
         primaryStage.setScene(scene);
         Text scenetitle = new Text("Welcome");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 40));
+        scenetitle.setId("welcome-text");
         grid.add(scenetitle, 0, 0, 2, 1);
-        Label userName = new Label("User Name:");
-        grid.add(userName, 0, 1);
-        TextField userTextField = new TextField();
-        grid.add(userTextField, 1, 1);
+        Label text = new Label("Text : ");
+        grid.add(text, 0, 1);
+        TextField textField = new TextField();
+        grid.add(textField, 1, 1);
         Button btnMaj = new Button("Maj");
         Button btnMin = new Button("Min");
         HBox hbBtn = new HBox(10);
@@ -47,6 +46,9 @@ public class Main extends Application {
         grid.add(hbBtn, 1, 4);
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
+        actiontarget.setId("actiontarget");
+
+        scene.getStylesheets().add (Main.class.getResource("FX.css").toExternalForm());
 
 
         btnMaj.setOnAction(new EventHandler<ActionEvent>() {
@@ -54,7 +56,7 @@ public class Main extends Application {
             @Override
             public void handle(ActionEvent e) {
                 actiontarget.setFill(Color.BLACK);
-                actiontarget.setText(userTextField.getText().toUpperCase());
+                actiontarget.setText(textField.getText().toUpperCase());
             }
         });
 
@@ -63,7 +65,7 @@ public class Main extends Application {
             @Override
             public void handle(ActionEvent e) {
                 actiontarget.setFill(Color.BLACK);
-                actiontarget.setText(userTextField.getText().toLowerCase());
+                actiontarget.setText(textField.getText().toLowerCase());
             }
         });
 
