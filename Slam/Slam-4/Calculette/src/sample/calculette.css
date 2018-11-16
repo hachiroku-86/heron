@@ -1,0 +1,32 @@
+.root{
+    -fx-background-color: #a0a0a0;
+}
+
+#btnr {
+    -fx-text-fill: black;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 30px;
+    -fx-background-radius: 30px;
+    -fx-background-color: #ededed;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+}
+
+#btnr:hover {
+    -fx-background-color: linear-gradient(#cecece, #ffffff);
+}
+
+#btns {
+    -fx-text-fill: black;
+    -fx-font-family: "Arial Narrow";
+    -fx-pref-height: 30px;
+    -fx-pref-width: 30px;
+    -fx-background-radius: 30px;
+    -fx-background-color: #cecece;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+}
+
+#btns:hover {
+    -fx-background-color: linear-gradient(#cecece, #ffffff);
+}
