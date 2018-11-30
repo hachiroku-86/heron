@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>formulaire Ville Got 3</title>
+	<link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js" crossorigin="anonymous"></script>
+<script src="appel.js" charset=utf-8></script>
+
+<a href="index.html"><input type="submit" value="retour"/></a>
+<form>
+    <fieldset>
+        <legend>Rechercher une ville : </legend>
+        <label for="nameV">nom ville : </label><input type="text" id="nameV" required="required"/>
+        <br><br>
+        <input type="submit" id="btnV" class="envoyer" value="Rechercher" />
+    </fieldset>
+</form>
+
+<div class="col-md-8 col-lg-6">
+	<table>
+        <TR> 
+            <TH> ID Ville </TH>
+            <TH> Nom Ville </TH>
+        </TR> 
+        <TR> 
+            <TD id="table-cities-1"> </TD> 
+            <TD id="table-cities-2"> </TD> 
+        </TR>
+    </table>
+</div>
+
+</body>
+</html>
