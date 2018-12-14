@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function (){
 	$('#btn-get-houses').click(function () {
 		$('#table-houses').bootstrapTable({
 			url: 'https://api.got.show/api/houses',
@@ -17,6 +17,8 @@ $(document).ready(function () {
 			},]
 		});
 	});
+
+
 	$('#btn-get-villes').click(function () {
 			alert("coucou1");
 		$.ajax({
@@ -31,21 +33,49 @@ $(document).ready(function () {
 					+ resultat.data.priority + "<br>"
 					+ resultat.data.link + "<br>"
 				);
-				alert("coucou2");
 			},
 			
 		});
 	});
-	$('#btnV').click(function () {
+
+
+
+	$('#btn-get-perso').click(function () {
 		$.ajax({
-			url: 'https://api.got.show/api/cities/'+$('#nameV').val()+'',
-			type: "GET",
-            success: function (resultat) {
-                var id = resultat.data._id;
-                var name = resultat.data.name;
-                $('#table-cities-1').html(id);
-                $('#table-cities-2').html(name);
-            }
+			type : "GET",
+			url: 'https://api.got.show/api/characters/'+$('#persourl').val(),
+			success: function(resultat){
+				$('#resultat').html(resultat.data.name + "<br>"
+					+ resultat.data._id + "<br>"
+					+ resultat.data.house + "<br>"
+					+ resultat.data.slug + "<br>"
+					+ resultat.data.male + "<br>"
+					+ resultat.data.pageRank + "<br>"
+					+ resultat.data.books + "<br>"
+				);
+				sessionStorage.setItem('houseP', resultat.data.house);
+				sessionStorage.getItem('houseP');
+			},
+			
 		});
-	});
+		$.ajax({
+			type : "GET",
+			url: 'https://api.got.show/api/houses/'+sessionStorage.getItem('houseP'),
+			success: function(resultat){
+				$('#table-houses').html(resultat.data._id + "<br>"
+					+ resultat.data.imageLink + "<br>"
+					+ resultat.data.cadetBranch + "<br>"
+					+ resultat.data.overlord + "<br>"
+					+ resultat.data.title + "<br>"
+					+ resultat.data.region + "<br>"
+					+ resultat.data.currentLord + "<br>"
+					+ resultat.data.words + "<br>"
+					+ resultat.data.coatsOfArms + "<br>"
+					+ resultat.data.name + "<br>"
+					+ resultat.data.ancestralWeapon + "<br>"
+				);
+			},
+			
+		});
+	});	
 });
