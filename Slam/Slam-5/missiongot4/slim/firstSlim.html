@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="function.js" charset=utf-8></script>
+
+	<input type="button" id="btn-valide" value="Première URI – GET /bonjour" /><br><br>
+
+	<fieldset>
+		<legend>URI avec attribut – GET /personnage/{name}</legend>
+		<form method="get" action="bonjour.php">
+			<label>Nom du personnage</label> : <input type="text" id="name" />
+       		<input type="button" id="btn-personnage" value="Valider!" />
+    	</form>
+    </fieldset>
+    
+	<div id="resultat"></div><br><br>
+
+	<fieldset>
+		<legend>URI avec paramètre – GET /user</legend>
+		<form method="get" action="bonjour.php">
+			<label>Login</label> : <input type="text" id="login" />
+       		<label>Mot de passe</label> : <input type="text" id="pw" />
+       		<input type="button" id="btn-log" value="Connexion" />
+    	</form>
+	</fieldset>
+
+    <div id="resultlog"></div><br><br>
+
+    <fieldset>
+		<legend>URI avec paramètre – POST /user</legend>
+		<form method="get" action="bonjour.php">
+			<label>Email</label> : <input type="text" id="mailIns" />
+			<label>Login</label> : <input type="text" id="loginIns" />
+       		<label>Mot de passe</label> : <input type="text" id="pwIns" />
+       		<input type="button" id="btn-inscription" value="Inscription" />
+    	</form>
+	</fieldset>
+    
+
+</body>
+</html>
