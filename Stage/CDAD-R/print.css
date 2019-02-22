@@ -1,0 +1,60 @@
+@page {
+    margin-top: 15mm;
+   	margin-bottom: 15mm;
+   	margin-left: 7mm;
+   	margin-right: 7mm;
+}
+
+body {
+	margin: 0;
+	padding:0;
+	font-size: 0;
+}
+
+form {
+	display: none;
+	margin: 0;
+}
+
+.classQRCode {
+	width: 63.5mm;
+	height: 38.1mm;
+	margin-right: 2.5mm;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+.classQRCode:nth-child(3n + 0) {
+	margin-right: 0;
+}
+
+.classQRCode canvas {
+	margin-top: 2mm;
+	margin-left: 2mm;
+}
+
+#htmlUl{
+	width: 70mm;
+	font-size: 8pt;
+	font-weight: bold;
+	display: inline-block;
+	list-style-type: none;
+	position: absolute;
+	padding: 10px;
+}
+
+#htmlUl2{
+	width: 70mm;
+	font-size: 8pt;
+	font-weight: bold;
+	display: inline-block;
+	list-style-type: none;
+	padding: 10px;
+}
+
+#ligne3qr {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}

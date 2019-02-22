@@ -1,0 +1,61 @@
+#qrcode canvas {
+    margin: 20px;
+}
+
+#ligne3qr {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.classQRCode{
+	margin-top: 10px;
+	width: 33%;
+	height: 38mm;
+	border-radius: 7pt;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+}
+
+.classQRCode canvas {
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: 10px;    
+}
+
+#htmlUl{
+	margin: 10px 0 0 4px;
+	width: 250px;
+	display: inline-block;
+	list-style-type: none;
+	position: absolute;
+	padding: 10px;
+}
+
+#htmlUl2{
+	margin: 10px 0 0 4px;
+	width: 250px;
+	display: inline-block;
+	list-style-type: none;
+	padding: 10px;
+}
+
+#selectFile {
+	font-style: italic; 
+	font-size: 14pt;
+}
+
+#fieldset {
+	box-shadow: 5px 5px 2px #aaaa;
+	border-color: #696969;
+}
+
+form {
+	background-color: #A9A9A9;
+	font-style: italic; 
+}
+
+
+
+

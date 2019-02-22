@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/js/style-jquery.js"></script>
+<script type="text/javascript" src="jquery-qrcode-master/jquery.qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+
+	<title>API File</title>
+</head>
+<body>
+
+<form>
+	<fieldset id="fieldset">
+
+		<p id="selectFile">Sélectionnez un fichier : &nbsp;&nbsp;<input id="uploadFiles" type="file" multiple=""></p>
+
+		<script type="text/javascript">
+			testUploadFile();
+		</script>
+
+
+		<h3>Fichiers :</h3>
+
+		<ul id="fileList">
+			<li class="no-items">Pas encore de fichiers sélectionnés</li>
+			<p id="idContent"></p>
+		</ul>
+
+		<button onclick="funct2(); return false">Test variables dans des fonctions</button>
+
+		<p id="idTest"></p>
+
+		<input type="button" id="createQRCode" value="Test de QR Code" onclick="qrCode()"><br><br>
+
+		<div id="qrcode"></div>
+
+	</fieldset>
+</form>
+
+
+
+<div id="ligne3qr"></div>
+
+</body>
+</html> 
