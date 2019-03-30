@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="function.js" charset=utf-8></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js" crossorigin="anonymous"></script>
+
+	<input type="button" id="btn-bonjour" value="Première URI – GET /bonjour" /><br><br>
+
+	<H1>Misson Got 4</H1>
+
+	<fieldset>
+		<legend>URI avec attribut – GET /personnage/{name} | Affiche la description d'un personnage</legend>
+		<form method="get" action="index.php">
+			<label>Nom du personnage</label> : <input type="text" id="name" />
+       		<input type="button" id="btn-got4-1" value="Valider" />
+    	</form>
+    </fieldset>
+    
+	<table id="resultat-got4-1"></table><br><br>
+
+	<fieldset>
+		<legend>URI avec paramètre – GET /user | Renvoie l'email d'un utilisateur</legend>
+		<form method="get" action="index.php">
+			<label>Login</label> : <input type="text" id="login" />
+       		<label>Mot de passe</label> : <input type="password" id="pw" />
+       		<input type="button" id="btn-got4-2" value="Valider" />
+    	</form>
+	</fieldset>
+
+    <div id="resultat-got4-2"></div><br><br>
+
+    <fieldset>
+		<legend>URI avec paramètre – POST /user | Ajoute un utilisateur à la base de donnée</legend>
+		<form method="get" action="index.php">
+			<label>Email</label> : <input type="text" id="mailIns" />
+			<label>Login</label> : <input type="text" id="loginIns" />
+       		<label>Mot de passe</label> : <input type="password" id="pwIns" />
+       		<input type="button" id="btn-got4-3" value="Inscription" />
+    	</form>
+	</fieldset>
+
+	<div id="resultat-got4-3"></div><br><br>
+
+	<H1>Mission Got 5</H1>    
+
+	<fieldset>
+		<legend>URI avec attribut – DELETE /user/{login(id)} | Supprime un utilisateur </legend>
+		<form action="index.php">
+			<label>Login de l'utilisateur</label> : <input type="text" id="login-got5" />
+       		<input type="button" id="btn-got5-1" value="Valider" />
+    	</form>
+    </fieldset>
+    
+	<div id="resultat-got5-1"></div><br><br>
+
+	<fieldset>
+		<legend>URI avec paramètre – PUT /user | Modifie l'email d'un utilisateur</legend>
+		<form action="index.php">
+			<label>Login</label> : <input type="text" id="login2" />
+       		<label>Adresse mail</label> : <input type="text" id="mail" />
+       		<input type="button" id="btn-got5-2" value="Valider" />
+    	</form>
+	</fieldset>
+
+    <div id="resultat-got5-2"></div><br><br>
+
+	<a href="users.html" target="_blank" id="pers100">Page 100 personnage.</a>
+
+	<H1>Mission Got 6</H1>
+
+	<fieldset>
+		<legend>Obtention token</legend>
+		<form action="index.php">
+			<label>Login</label> : <input type="text" id="login-got6" />
+       		<label>Mot de passe</label> : <input type="password" id="pw-got6" />
+       		<input type="button" id="btn-got6-1" value="Valider">
+    	</form>
+	</fieldset>
+
+	<br><br>
+
+	<input type="button" id="btn-got6-2" value="Test Token.">
+
+	<div id="resultat-got6-2"></div>
+
+	<H1>Mission Got 7</H1>
+
+	<p id="hrefStat">Page statistique <a href="statistiques.html" target="_blank" id="hrefStat">ici !</a></p>
+
+	<H1>E4 Blanc</H1>
+
+	<fieldset>
+		<legend>Modifie le nom de la culture</legend>
+		<form action="index.php">
+			<label>Nom de la culture</label> : <input type="text" id="cultname" />
+       		<label>Nouveau nom de la culture</label> : <input type="text" id="cultnamenew" />
+       		<input type="button" id="btn-got-E4" value="Valider" />
+    	</form>
+	</fieldset>
+
+	<div id="resultat-got-E4"></div>
+
+	<br><br>
+
+</body>
+</html>

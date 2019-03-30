@@ -1,0 +1,6 @@
+applications:
+- name: got4got
+  memory: 128M
+  buildpack: php_buildpack
+  routes:
+  - route: got4got.mybluemix.net
