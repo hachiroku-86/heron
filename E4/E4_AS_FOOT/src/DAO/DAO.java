@@ -26,16 +26,22 @@ public class DAO {
         Licencie L = new Licencie();
         try {
             Connection conn = getConnexion();
-            String req = "SELECT login, Mdp, Nom, Prenom FROM Licencie WHERE Login = ? AND Mdp = ? ";
+            String req = "SELECT * FROM Licencie WHERE Login = ? AND Mdp = ? ";
             PreparedStatement pstmt = conn.prepareStatement(req);
             pstmt.setString(1,login);
             pstmt.setString(2,Mdp);
             ResultSet result = pstmt.executeQuery();
             while (result.next()){
-                L.setLogin(result.getString(1));
-                L.setMdp(result.getString(2));
-                L.setNom(result.getString(3));
-                L.setPrenom(result.getString(4));
+                L.setId(result.getInt(1));
+                L.setNom(result.getString(2));
+                L.setPrenom(result.getString(3));
+                L.setDateNaissance(result.getDate(4));
+                L.setLogin(result.getString(5));
+                L.setMdp(result.getString(6));
+                L.setLicence(result.getString(7));
+                L.setDateInscription(result.getDate(8));
+                L.setType(result.getString(9));
+
             }
 
             pstmt.close();

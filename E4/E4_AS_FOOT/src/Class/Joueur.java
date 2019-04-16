@@ -18,8 +18,8 @@ public class Joueur extends Licencie{
     /**
      * Méthode qui initialise un joueur
      */
-    public Joueur(int id, String nom, String prenom, Date dateNaissance, String login, String mdp, String licence, Date dateInscription, Equipe equipe, int num, String poste) {
-        super(id, nom, prenom, dateNaissance, login, mdp, licence, dateInscription);
+    public Joueur(int id, String nom, String prenom, Date dateNaissance, String login, String mdp, String licence, Date dateInscription, String type, Equipe equipe, int num, String poste) {
+        super(id, nom, prenom, dateNaissance, login, mdp, licence, dateInscription, type);
         this.equipe = equipe;
         this.num = num;
         this.poste = poste;
@@ -89,5 +89,9 @@ public class Joueur extends Licencie{
                 ", num=" + num +
                 ", poste='" + poste + '\'' +
                 '}';
+    }
+
+    public int getIdEquipe(){
+        return equipe.getId();
     }
 }

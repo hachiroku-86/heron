@@ -24,6 +24,7 @@ public class LicencieDAO extends DAO{
                 result.setMdp(res.getString(6));
                 result.setLicence(res.getString(7));
                 result.setDateInscription(res.getDate(8));
+                result.setType(res.getString(9));
                 listeLicencie.add(result);
             }
             res.close();
@@ -51,7 +52,7 @@ public class LicencieDAO extends DAO{
     {
         try {
             Connection conn = getConnexion();
-            String req = "INSERT INTO Licencie VALUES (?,?,?,?,?,?,?,?)";
+            String req = "INSERT INTO Licencie VALUES (?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(req);
             pstmt.setInt(1, L.getId());
             pstmt.setString(2, L.getNom());
@@ -61,6 +62,7 @@ public class LicencieDAO extends DAO{
             pstmt.setString(6, L.getMdp());
             pstmt.setString(7, L.getLincence());
             pstmt.setDate(8, new Date(L.getDateInscription().getTime()));
+            pstmt.setString(9, L.getType());
             pstmt.close();
             conn.close();
         }
@@ -84,13 +86,13 @@ public class LicencieDAO extends DAO{
         }
     }
 
-    public ArrayList<Licencie> getLicencieByNom() throws ExceptionDAO {
+    public ArrayList<Licencie> getLicencieByLogin() throws ExceptionDAO {
         ArrayList<Licencie> listeLicencie = new ArrayList<Licencie>();
         Connection conn = null;
         try {
             conn = super.getConnexion();
             Statement stmt = conn.createStatement();
-            String req = "SELECT * FROM Licencie WHERE Nom = ?";
+            String req = "SELECT * FROM Licencie WHERE Login = ?";
             ResultSet res = stmt.executeQuery(req);
             while (res.next()) {
                 Licencie result = new Licencie();
@@ -102,6 +104,7 @@ public class LicencieDAO extends DAO{
                 result.setMdp(res.getString(6));
                 result.setLicence(res.getString(7));
                 result.setDateInscription(res.getDate(8));
+                result.setType(res.getString(9));
                 listeLicencie.add(result);
             }
             res.close();

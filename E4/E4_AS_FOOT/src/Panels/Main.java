@@ -16,14 +16,22 @@ public class Main extends Application {
     private static Hashtable<String, Pane> vues = new Hashtable<>();
 
     private static void HtabPane(){
+
         vues.put("logPane", new LogPane());
+        vues.put("publicPane", new PublicPane());
+        vues.put("accueilPane", new AccueilPane());
+        vues.put("accueilJoueurPane", new AccueilJoueurPane());
+        vues.put("accueilDirPane", new AccueilDirPane());
+        vues.put("dirJoueurPane", new DirJoueurPane());
     }
 
     public static Pane getPanel(String s){
+
         return vues.get(s);
     }
 
     public static Scene getScene(){
+
         return scene;
     }
 
@@ -31,8 +39,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        primaryStage.setMaximized(true);
         HtabPane();
-        scene = new Scene(getPanel("logPane"),500,500);
+        scene = new Scene(getPanel("accueilPane"),500,500);
         primaryStage.setTitle("E4 AS Foot");
         primaryStage.setScene(scene);
         primaryStage.show();

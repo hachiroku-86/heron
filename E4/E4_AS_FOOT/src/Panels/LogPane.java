@@ -1,6 +1,8 @@
 package Panels;
 
+import Class.Dirigeant;
 import DAO.DAO;
+import DAO.ExceptionDAO;
 import Class.Licencie;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -10,6 +12,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import Class.Joueur;
+
+import java.util.ArrayList;
 
 public class LogPane extends GridPane {
 
@@ -17,6 +22,8 @@ public class LogPane extends GridPane {
     String password;
     Text actiontargetResult = new Text();
     DAO dao = new DAO();
+    Licencie licencie1 = new Licencie();
+    Dirigeant dir = new Dirigeant();
 
     public LogPane(){
 
@@ -48,6 +55,9 @@ public class LogPane extends GridPane {
         Button btnLog = new Button("Connexion");
         this.add(btnLog, 2,3);
 
+        Button btnRet = new Button("Retour");
+        this.add(btnRet, 2,5);
+
 
 
         btnLog.setOnAction(new EventHandler<ActionEvent>() {
@@ -56,17 +66,33 @@ public class LogPane extends GridPane {
             public void handle(ActionEvent e) {
                 login = textField1.getText();
                 password = textField2.getText();
-                Licencie licencie1 = dao.testLog(login, password);
+                licencie1 = dao.testLog(login, password);
 
-
+                System.out.println(licencie1.getLogin());
+                System.out.println(licencie1.getMdp());
                 if (licencie1.getLogin().equals(login) && licencie1.getMdp().equals(password)) {
                     actiontargetResult.setText("Bienvenue" + " " + licencie1.getPrenom() + " " + licencie1.getNom() + " !");
-                    Main.getScene().setRoot(Main.getPanel("logPane"));
+
+                    System.out.println(licencie1 + "test");
+                    if (licencie1.getType().equals("Joueur")) {
+                        Main.getScene().setRoot(Main.getPanel("accueilJoueurPane"));
+                    }
+
+                    else if (licencie1.getType().equals("Entraineur")){
+                        Main.getScene().setRoot(Main.getPanel("accueilDirPane"));
+                    }
                 }else{
                     actiontargetResult.setText("Mauvais login ou mot de passe.");
                 }
 
 
+            }
+        });
+
+        btnRet.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Main.getScene().setRoot(Main.getPanel("accueilPane"));
             }
         });
 

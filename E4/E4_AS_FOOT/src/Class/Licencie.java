@@ -16,13 +16,14 @@ public class Licencie {
     private String mdp;
     private String licence;
     private Date dateInscription;
+    private String type;
 
 
 
     /**
      * Méthode qui initialise un licencié
      */
-    public Licencie(int id, String nom, String prenom, Date dateNaissance, String login, String mdp, String licence, Date dateInscription){
+    public Licencie(int id, String nom, String prenom, Date dateNaissance, String login, String mdp, String licence, Date dateInscription, String type){
         this.id=id;
         this.nom=nom;
         this.prenom=prenom;
@@ -31,6 +32,7 @@ public class Licencie {
         this.mdp=mdp;
         this.licence=licence;
         this.dateInscription=dateInscription;
+        this.type=type;
     }
 
     public Licencie(){}
@@ -83,6 +85,12 @@ public class Licencie {
      */
     public Date getDateInscription(){ return dateInscription;}
 
+    /**
+     * Méthode qui récupère le type du licencié
+     * @return type
+     */
+    public String  getType(){ return type;}
+
 
     /**
      * Méthode qui initialise l'id du licencié
@@ -132,10 +140,16 @@ public class Licencie {
      */
     public void setDateInscription(Date dateInscription) { this.dateInscription = dateInscription; }
 
+    /**
+     * Méthode qui initialise le type du licencié
+     * @param type type du licencié
+     */
+    public void setType(String type) { this.type = type; }
+
 
     /**
      * Méthode qui permet d'afficher le joueur
-     * @return '\n' + "Id = "+ id + '\n' + "Nom = "+ nom + '\n' + "Prénom = "+ prenom + '\n' + "Date de naissance = "+ dateNaissance + '\n' + "Login = "+ login +'\n + "Mot de passe = "+ mdp +'\n + "Licence = "+ licence +'\n + "Date d'inscription = "+ dateInscrition +'\n';
+     * @return '\n' + "Id = "+ id + '\n' + "Nom = "+ nom + '\n' + "Prénom = "+ prenom + '\n' + "Date de naissance = "+ dateNaissance + '\n' + "Login = "+ login +'\n + "Mot de passe = "+ mdp +'\n + "Licence = "+ licence +'\n + "Date d'inscription = "+ dateInscrition +'\n + "Type ="+ type';
      */
     @Override
     public String toString() {
@@ -147,7 +161,8 @@ public class Licencie {
                 ", login='" + login + '\'' +
                 ", mdp='" + mdp + '\'' +
                 ", licence='" + licence + '\'' +
-                ", dateInscription=" + dateInscription +
+                ", dateInscription=" + dateInscription + '\''+
+                ", type=" + type + '\''+
                 '}';
     }
 }

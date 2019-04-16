@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="E4:jar">
+    <output-path>$PROJECT_DIR$/../../Slam/.jar</output-path>
+    <root id="archive" name="E4.jar">
+      <element id="module-output" name="E4" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../mariadb-java-client-2.2.3.jar" path-in-jar="/" />
+      <element id="library" level="project" name="mariadb-java-client-2.2.3" />
+    </root>
+  </artifact>
+</component>

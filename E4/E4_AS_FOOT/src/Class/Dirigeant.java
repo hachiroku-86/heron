@@ -17,7 +17,7 @@ public class Dirigeant extends Licencie {
      * Méthode qui initialise un dirigeant
      */
     public Dirigeant(int id, String nom, String prenom, Date dateNaissance, String login, String mdp, String licence, Date dateInscription, String type, Club club) {
-        super(id, nom, prenom, dateNaissance, login, mdp, licence, dateInscription);
+        super(id, nom, prenom, dateNaissance, login, mdp, licence, dateInscription, type);
         this.type = type;
         this.club = club;
     }
