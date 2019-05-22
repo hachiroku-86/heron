@@ -4,9 +4,9 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use \Firebase\JWT\JWT;
 
-$dsn = 'mysql:dbname=GamesOfThrones;host=sl-us-south-1-portal.34.dblayer.com:56255'; 
-$user = 'admin'; 
-$password = 'MJZODZCSVZSAMRWE';
+$dsn = 'mysql:dbname=GamesOfThrones;host=heront.cpkeew4cmc1b.eu-west-1.rds.amazonaws.com'; 
+$user = 'heront'; 
+$password = 'cresta1jz';
 $test_co = 0;
  
 $app = new \Slim\App;
@@ -34,7 +34,7 @@ function connexion()
      * return $dbh = new PDO($dsn, $db_creds['user'], $db_creds['pass'],array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
      * */
     //autre
-    return $dbh = new PDO('mysql:dbname=GameOfThrones;host=sl-us-south-1-portal.34.dblayer.com:56255','admin', 'MJZODZCSVZSAMRWE', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+    return $dbh = new PDO('mysql:dbname=GameOfThrones;host=heront.cpkeew4cmc1b.eu-west-1.rds.amazonaws.com','heront', 'cresta1jz', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 }
 function getPersonnage($name)
 {
@@ -272,6 +272,24 @@ $app->get('/obtentionToken', function(Request $request, Response $response){
     function cityByType()
     {
         $sql = "SELECT count(cities.id) nb, cities_type.name name FROM cities, cities_type WHERE cities.type = cities_type.id GROUP BY name";
+        try{
+            $dbh=connexion();
+            $statement = $dbh->prepare($sql);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_CLASS); 
+            return json_encode($result, JSON_PRETTY_PRINT);
+        } catch(PDOException $e){
+            return '{"error":'.$e->getMessage().'}';
+        }
+    }
+
+    $app->get('/perso100', function(Request $request, Response $response){
+        return perso100();
+    });
+ 
+    function perso100()
+    {
+        $sql = "CALL getPerso100";
         try{
             $dbh=connexion();
             $statement = $dbh->prepare($sql);

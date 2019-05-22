@@ -42,7 +42,7 @@ $(document).ready(function (){
            	$("#resultat-got4-2").html(data);
         	},
         error: function(){
-          $("#resultat-got4-2").html("Token invalide.")
+          $("#resultat-got4-2").html("Token invalide.");
         }
    	});
   });
@@ -171,7 +171,6 @@ $(document).ready(function (){
     type: "GET",
     url: "../index.php/stats",
     success: function(data){
-      console.log(data);
       nb = data;
       nbPersoByHouseParse = JSON.parse(data);
     },
@@ -217,7 +216,6 @@ $.ajax({
     type: "GET",
     url: "../index.php/cityByType",
     success: function(data){
-      console.log(data);
       nb = data;
       nbCityByType = JSON.parse(data);
     },
@@ -259,9 +257,53 @@ $("#btn-got7-2").click(function(event){
   });
 });
 
+$.ajax({
+    type: "GET",
+    url: "../index.php/perso100",
+    success: function(data){
+      console.log(data);
+      nb = data;
+      nbPerso100 = JSON.parse(data);
+    },
+  });
+
+$("#btn-got7-3").click(function(event){
+  var nombre = new Array();
+  var nom = new Array();
+  var backgroundColor = new Array();
+
+  for (var i = 0; i < nbPerso100.length; i++) {
+    nombre[i] = nbPerso100[i].nb;
+    nom[i] = nbPerso100[i].name;
+    backgroundColor[i] = getRandomColor();
+  }
+
+  var ctx2 = document.getElementById("myChart3").getContext('2d');
+  var myChart = new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+      labels: nom,
+        datasets: [{
+          label: 'Nombre de personnages par tranche de 100 ans',
+          data: nombre,
+          backgroundColor: backgroundColor
+        }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    }
+  });
+});
+
  /*  Fin Got 7 */
 
-   $('#btn-got-E4').click(function(){ 
+  $('#btn-got-E4').click(function(){ 
   var nameold=$('#cultname').val();
   var namenew=$('#cultnamenew').val();
     $.ajax({ 
