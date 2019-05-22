@@ -10,7 +10,7 @@ public class Entrainement {
     private int id;
     private Equipe equipe;
     private Terrain terrain;
-    private Dirigeant entraineur;
+    private Entraineur entraineur;
     private double duree;
 
 
@@ -18,7 +18,7 @@ public class Entrainement {
     /**
      * Méthode qui initialise un entraineur
      */
-    public Entrainement(int id, Equipe equipe, Terrain terrain, Dirigeant entraineur, double duree) {
+    public Entrainement(int id, Equipe equipe, Terrain terrain, Entraineur entraineur, double duree) {
         this.id = id;
         this.equipe = equipe;
         this.terrain = terrain;
@@ -55,7 +55,7 @@ public class Entrainement {
      * Méthode qui récupère l'entraineur de l'entrainement
      * @return entraineur
      */
-    public Dirigeant getEntraineur() {
+    public Entraineur getEntraineur() {
         return entraineur;
     }
 
@@ -96,7 +96,7 @@ public class Entrainement {
      * Méthode qui initialise l'entraineur de l'entrainement
      * @param entraineur entraineur de l'entrainement
      */
-    public void setEntraineur(Dirigeant entraineur) {
+    public void setEntraineur(Entraineur entraineur) {
         this.entraineur = entraineur;
     }
 

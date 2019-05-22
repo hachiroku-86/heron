@@ -9,9 +9,9 @@ public class DAO {
     public Connection getConnexion()throws SQLException, ClassNotFoundException{
         Connection conn = null;
         String driver = "org.mariadb.jdbc.Driver";
-        String url = "jdbc:mariadb://sl-us-south-1-portal.34.dblayer.com:56255/E4_AS_FOOT";
-        String user = "admin";
-        String pwd = "MJZODZCSVZSAMRWE";
+        String url = "jdbc:mariadb://heront.cpkeew4cmc1b.eu-west-1.rds.amazonaws.com/E4_AS_FOOT";
+        String user = "heront";
+        String pwd = "cresta1jz";
         Class.forName(driver);
         System.out.println("driver ok");
         conn = DriverManager.getConnection(url, user, pwd);

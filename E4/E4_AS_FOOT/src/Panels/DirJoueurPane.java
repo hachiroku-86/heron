@@ -1,80 +1,109 @@
 package Panels;
 
+import DAO.EntraineurDAO;
 import DAO.ExceptionDAO;
-import DAO.DirigeantDAO;
-import Class.Dirigeant;
+import Class.Entraineur;
+import DAO.JoueurDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
 public class DirJoueurPane extends GridPane{
 
-    private DirigeantDAO dDAO = new DirigeantDAO();
-    private TableView<Dirigeant> tableDirigeant = new TableView();
-    private ArrayList listDirigeant = new ArrayList();
+    private JoueurDAO jDAO = new JoueurDAO();
+    private TableView<Entraineur> tableEntraineur = new TableView();
+    private ArrayList listEntraineur = new ArrayList();
+    private Entraineur entraineur = null;
 
-    public DirJoueurPane(){
+    private Text titre = new Text("");
 
-        this.setAlignment(Pos.CENTER_LEFT);
-        this.setHgap(10);
-        this.setVgap(10);
-        this.setPadding(new Insets(25, 25, 25, 25));
 
-        Button btnJoueurs = new Button("Voir les joueurs professionnels");
-        Button btnRet = new Button("Retour");
+    public Entraineur getEntraineur() {
+        return entraineur;
+    }
 
-        this.add(btnJoueurs, 1, 1);
-        this.add(btnRet, 1, 2);
+    public void setEntraineur(Entraineur entraineur){
+        this.entraineur = entraineur;
+        exe();
+    }
 
-        TableColumn<Dirigeant, String> id = new TableColumn<>("Id");
-        TableColumn<Dirigeant, String> type = new TableColumn<>("Type");
-        TableColumn<Dirigeant, String> nom = new TableColumn<>("Nom");
-        TableColumn<Dirigeant, String> prenom = new TableColumn<>("Prénom");
-        TableColumn<Dirigeant, String> dateNaissance = new TableColumn<>("Date Naissance");
-        TableColumn< Dirigeant, String> dateIns = new TableColumn<>("Date Inscription");
 
-        tableDirigeant.getColumns().addAll(id, type, prenom, nom, dateNaissance, dateIns);
+    public void exe(){
 
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        type.setCellValueFactory(new PropertyValueFactory<>("type"));
+        titre.setText("Bienvenue " + entraineur.getPrenom() + " " + entraineur.getNom() + " !");
+
+        VBox vbox = new VBox();
+        this.add(vbox, 0, 1);
+
+        vbox.getChildren().add(titre);
+
+
+        TableColumn<Entraineur, String> nom = new TableColumn<>("Nom");
+        TableColumn<Entraineur, String> prenom = new TableColumn<>("Prénom");
+        TableColumn<Entraineur, String> num = new TableColumn<>("Numéro");
+        TableColumn<Entraineur, String> poste = new TableColumn<>("Poste");
+        TableColumn<Entraineur, String> dateInscription = new TableColumn<>("Inscription");
+
+        tableEntraineur.getColumns().addAll(prenom, nom, num, poste, dateInscription);
+
         prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        dateNaissance.setCellValueFactory(new PropertyValueFactory<>("dateNaissance"));
-        dateIns.setCellValueFactory(new PropertyValueFactory<>("dateInscription"));
+        num.setCellValueFactory(new PropertyValueFactory<>("num"));
+        poste.setCellValueFactory(new PropertyValueFactory<>("poste"));
+        dateInscription.setCellValueFactory(new PropertyValueFactory<>("dateInscription"));
 
-        id.setSortType(TableColumn.SortType.DESCENDING);
+        nom.setSortType(TableColumn.SortType.DESCENDING);
 
         try {
-            listDirigeant = dDAO.getAllDirigeant();
-            ObservableList listTransi = FXCollections.observableArrayList(listDirigeant);
-            tableDirigeant.setItems(listTransi);
+            listEntraineur = jDAO.getJoueurByEntraineur(entraineur.getId());
+            ObservableList listTransi = FXCollections.observableArrayList(listEntraineur);
+            tableEntraineur.setItems(listTransi);
         } catch (ExceptionDAO exceptionDAO) {
             exceptionDAO.printStackTrace();
         }
 
-        this.add(tableDirigeant,1,1);
+        this.add(tableEntraineur,1,1);
 
-        btnJoueurs.setOnAction(new EventHandler<ActionEvent>() {
+    }
+
+    public DirJoueurPane(){
+
+        this.setHgap(10);
+        this.setVgap(10);
+        this.setPadding(new Insets(25, 25, 25, 25));
+
+        Text scenetitle = new Text("DirJoueurPane");
+        scenetitle.setId("scene-title-text");
+        this.add(scenetitle, 0, 0);
+
+        Button btnAcc = new Button("Accueil");
+        Button btnRet = new Button("Retour");
+
+        this.add(btnAcc, 1, 2);
+        this.add(btnRet, 2, 2);
+
+        btnAcc.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Main.getScene().setRoot(Main.getPanel("publicJoueursProPane"));
+                Main.getScene().setRoot(Main.getPanel("accueilPane"));
             }
         });
 
         btnRet.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Main.getScene().setRoot(Main.getPanel("accueilPane"));
+                Main.getScene().setRoot(Main.getPanel("accueilDirPane"));
             }
         });
     }

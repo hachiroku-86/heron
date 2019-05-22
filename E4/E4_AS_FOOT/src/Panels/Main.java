@@ -19,10 +19,15 @@ public class Main extends Application {
 
         vues.put("logPane", new LogPane());
         vues.put("publicPane", new PublicPane());
+        vues.put("joueurPane", new JoueurPane());
+        vues.put("equipePane", new EquipePane());
+        vues.put("entraineurPane", new EntraineurPane());
         vues.put("accueilPane", new AccueilPane());
         vues.put("accueilJoueurPane", new AccueilJoueurPane());
         vues.put("accueilDirPane", new AccueilDirPane());
         vues.put("dirJoueurPane", new DirJoueurPane());
+        vues.put("nouvJoueurPane", new NouvJoueurPane());
+        vues.put("suppJoueurPane", new SupJoueurPane());
     }
 
     public static Pane getPanel(String s){

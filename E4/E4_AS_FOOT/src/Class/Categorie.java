@@ -14,6 +14,8 @@ public class Categorie {
     private String code;
 
 
+    public Categorie() {}
+
     /**
      * Méthode qui initialise une catégorie
      */

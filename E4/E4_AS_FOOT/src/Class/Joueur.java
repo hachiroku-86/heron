@@ -85,6 +85,15 @@ public class Joueur extends Licencie{
     @Override
     public String toString() {
         return "Joueur{" +
+                "id=" + super.getId() +
+                ", nom='" + super.getNom() + '\'' +
+                ", prenom='" + super.getPrenom() + '\'' +
+                ", dateNaissance=" + super.getDateNaissance() +
+                ", login='" + super.getLogin() + '\'' +
+                ", mdp='" + super.getMdp() + '\'' +
+                ", licence='" + super.getLincence() + '\'' +
+                ", dateInscription=" + super.getDateInscription() + '\''+
+                ", type=" + super.getType() + '\''+
                 "equipe=" + equipe +
                 ", num=" + num +
                 ", poste='" + poste + '\'' +

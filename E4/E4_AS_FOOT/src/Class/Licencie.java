@@ -153,7 +153,7 @@ public class Licencie {
      */
     @Override
     public String toString() {
-        return "Licencie{" +
+        return  "Licencie{" +
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +

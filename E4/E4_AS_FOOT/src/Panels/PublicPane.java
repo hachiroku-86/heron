@@ -12,69 +12,80 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
 public class PublicPane extends GridPane{
 
-    private JoueurDAO jDAO = new JoueurDAO();
-    private TableView<Joueur> tableJoueur = new TableView();
-    private ArrayList listJoueur = new ArrayList();
 
     public PublicPane(){
 
-
-        this.setAlignment(Pos.CENTER_LEFT);
-        this.setHgap(10);
-        this.setVgap(10);
+        this.setHgap(35);
+        this.setVgap(35);
         this.setPadding(new Insets(25, 25, 25, 25));
 
-        Button btnJoueurs = new Button("Voir les joueurs professionnels");
-        Button btnRet = new Button("Retour");
+        Text scenetitle = new Text("PublicPane");
+        scenetitle.setId("scene-title-text");
+        this.add(scenetitle, 0, 0);
 
-        this.add(btnJoueurs, 1, 1);
-        this.add(btnRet, 1, 2);
 
-        TableColumn<Joueur, String> id = new TableColumn<>("Id");
-        TableColumn<Joueur, String> prenom = new TableColumn<>("Prénom");
-        TableColumn<Joueur, String> nom = new TableColumn<>("Nom");
-        TableColumn<Joueur, String> equipe = new TableColumn<>("Id Equipe");
-        TableColumn<Joueur, String> poste = new TableColumn<>("Poste");
-        TableColumn<Joueur, String> num = new TableColumn<>("Numéro");
-        TableColumn<Joueur, String> dateIns = new TableColumn<>("Date Inscription");
-        TableColumn<Joueur, String> dateNaissance = new TableColumn<>("Date Naissance");
+        MenuBar menuBar = new MenuBar();
 
-        tableJoueur.getColumns().addAll(id, prenom, nom, equipe, poste, num, dateIns, dateNaissance);
+        Menu menuJoueur = new Menu("Joueur");
+        menuBar.getMenus().add(menuJoueur);
 
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
-        nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        equipe.setCellValueFactory(new PropertyValueFactory<>("idEquipe"));
-        poste.setCellValueFactory(new PropertyValueFactory<>("poste"));
-        num.setCellValueFactory(new PropertyValueFactory<>("num"));
-        dateIns.setCellValueFactory(new PropertyValueFactory<>("dateInscription"));
-        dateNaissance.setCellValueFactory(new PropertyValueFactory<>("dateNaissance"));
+        MenuItem menuJoueur1 = new MenuItem("Tout les Joueurs");
 
-        id.setSortType(TableColumn.SortType.DESCENDING);
+        menuJoueur.getItems().add(menuJoueur1);
 
-        try {
-            listJoueur = jDAO.getAllJoueur();
-            ObservableList listTransi = FXCollections.observableArrayList(listJoueur);
-            tableJoueur.setItems(listTransi);
-        } catch (ExceptionDAO exceptionDAO) {
-            exceptionDAO.printStackTrace();
-        }
 
-        this.add(tableJoueur,1,1);
+        Menu menuEquipe = new Menu("Equipe");
+        menuBar.getMenus().add(menuEquipe);
 
-        btnJoueurs.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem menuEquipe1 =new MenuItem("Toutes les équipes");
+
+        menuEquipe.getItems().add(menuEquipe1);
+
+
+        Menu menuEntraineur = new Menu("Entraineur");
+        menuBar.getMenus().add(menuEntraineur);
+
+        MenuItem menuEntraineur1 = new MenuItem("Tout les entraineurs");
+
+        menuEntraineur.getItems().add(menuEntraineur1);
+
+
+        VBox vBox = new VBox(menuBar);
+        this.add(vBox,15,0);
+
+        Button btnAcc = new Button("Accueil");
+        this.add(btnAcc, 0, 2);
+
+
+        menuJoueur1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Main.getScene().setRoot(Main.getPanel("publicJoueursProPane"));
+                Main.getScene().setRoot(Main.getPanel("joueurPane"));
             }
         });
 
-        btnRet.setOnAction(new EventHandler<ActionEvent>() {
+        menuEquipe1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Main.getScene().setRoot(Main.getPanel("equipePane"));
+            }
+        });
+
+        menuEntraineur1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Main.getScene().setRoot(Main.getPanel("entraineurPane"));
+            }
+        });
+
+        btnAcc.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Main.getScene().setRoot(Main.getPanel("accueilPane"));

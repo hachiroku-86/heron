@@ -71,13 +71,13 @@ public class LicencieDAO extends DAO{
         }
     }
 
-    public void deleteLicencie(Licencie L)
+    public void deleteLicencie(int id)
     {
         try {
             Connection conn = getConnexion();
             String req = "DELETE FROM Licencie WHERE Id = ?";
             PreparedStatement pstmt = conn.prepareStatement(req);
-            pstmt.setInt(1, L.getId());
+            pstmt.setInt(1, id);
             pstmt.close();
             conn.close();
         }

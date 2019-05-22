@@ -13,6 +13,8 @@ public class Club {
     private String ville;
 
 
+    public Club() {}
+
     /**
      * Méthode qui initialise un club
      */

@@ -8,7 +8,7 @@ package Class;
 public class Equipe {
 
     private int id;
-    private Dirigeant entraineur;
+    private Licencie entraineur;
     private Categorie categorie;
     private Club club;
 
@@ -17,7 +17,7 @@ public class Equipe {
     /**
      * Méthode qui initialise une équipe
      */
-    public Equipe(int id, Dirigeant entraineur, Categorie categorie, Club club) {
+    public Equipe(int id, Licencie entraineur, Categorie categorie, Club club) {
         this.id = id;
         this.entraineur = entraineur;
         this.categorie = categorie;
@@ -39,7 +39,7 @@ public class Equipe {
      * Méthode qui récupère l'entraineur de l'équipe
      * @return entraineur
      */
-    public Dirigeant getEntraineur() {
+    public Licencie getEntraineur() {
         return entraineur;
     }
 
@@ -49,6 +49,30 @@ public class Equipe {
      */
     public Categorie getCategorie() {
         return categorie;
+    }
+
+    /**
+     * Méthode qui récupère le nom de l'entraineur
+     * @return categorie.nom
+     */
+    public String getNomCategorie() {
+        return categorie.getNom();
+    }
+
+    /**
+     * Méthode qui récupère le nom de l'entraineur
+     * @return entraineur.nom
+     */
+    public String getNomEntraineur() {
+        return entraineur.getNom();
+    }
+
+    /**
+     * Méthode qui récupère le nom de l'entraineur
+     * @return club.nom
+     */
+    public String getNomClub() {
+        return club.getNom();
     }
 
     /**
@@ -72,7 +96,7 @@ public class Equipe {
      * Méthode qui initialise l'entraineur de l'équipe
      * @param entraineur id de l'équipe
      */
-    public void setEntraineur(Dirigeant entraineur) {
+    public void setEntraineur(Licencie entraineur) {
         this.entraineur = entraineur;
     }
 
@@ -88,9 +112,10 @@ public class Equipe {
      * Méthode qui initialise le club de l'équipe
      * @param club club de l'équipe
      */
-    public void setcClub(Club club) {
+    public void setClub(Club club) {
         this.club = club;
     }
+
 
     /**
      * Méthode qui permet d'afficher le joueur
